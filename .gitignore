@@ -14,3 +14,7 @@ coverage
 
 #docs
 docs/_site
+
+
+# IDE
+.idea
