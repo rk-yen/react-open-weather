@@ -13,8 +13,9 @@ const propTypes = {
   lon: PropTypes.string,
   city: PropTypes.string,
   forecast: PropTypes.oneOf(['today', '5days']),
-  apikey: PropTypes.string.isRequired,
+  apikey: PropTypes.string,
   lang: PropTypes.string,
+  forecastData: PropTypes.object,
 };
 
 const defaultProps = {
@@ -27,9 +28,12 @@ const defaultProps = {
 class ReactWeather extends React.Component {
   constructor(props) {
     super(props);
-    this.api = new OpenWeatherApi(props.unit, props.apikey, props.lang);
+    this.api = null;
+    if (props.api) {
+      this.api = new OpenWeatherApi(props.unit, props.apikey, props.lang);
+    }
     this.state = {
-      data: null,
+      data: props.forecastData,
     };
   }
   render() {
@@ -62,7 +66,9 @@ class ReactWeather extends React.Component {
     return <div>Loading...</div>;
   }
   componentDidMount() {
-    this.getForecastData();
+    if (this.api) {
+      this.getForecastData();
+    }
   }
   getForecastData() {
     const self = this;

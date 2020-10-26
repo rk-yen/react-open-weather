@@ -143,18 +143,28 @@ require('react-open-weather/lib/css/ReactWeather.css');
 />
 ```
 
+### 6-Providing the data via an outside data provider
+
+```html
+<ReactWeather
+  forecast="today"
+  forecastData={forecastData}
+/>
+```
+
 ## Props Options
 
-| Props        | Options               | Default | Description                                                                                                                                                                                                 |
-| ------------ | --------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **type**     | 'city', 'geo'         | city    | Determine the data should be loaded by city name or longitude and latitude                                                                                                                                  |
-| **city**     |                       |         | Name of the city to show forecast for, must be provided if the type='city'                                                                                                                                  |
-| **lon**      |                       |         | Longitude value, must be provided if the type='geo'                                                                                                                                                         |
-| **lat**      |                       |         | latitude value, must be provided if the type='geo'                                                                                                                                                          |
-| **forecast** | 'today', '5days'      | today   | Determine what forecast to show, today or today plus 4 days ahead                                                                                                                                           |
-| **apikey**   |                       |         | Your API key for open weather map API                                                                                                                                                                       |
-| **unit**     | 'imperial', 'meteric' | meteric | The unit system you want to use, for Meteric the temperature will be shown in Celsius and distances will be in kilometers, for Imperial the temperature will be shown in Fahrenheit and distances in miles. |
-| **lang**     | lang codes            | en      | Returns 'condition:text' field in API in the desired language, Please pass 'lang code' from below table. e.g.: lang=es                                                                                      |
+| Props            | Options               | Default | Description                                                                                                                                                                                                 |
+| ---------------- | --------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **type**         | 'city', 'geo'         | city    | Determine the data should be loaded by city name or longitude and latitude                                                                                                                                  |
+| **city**         |                       |         | Name of the city to show forecast for, must be provided if the type='city'                                                                                                                                  |
+| **lon**          |                       |         | Longitude value, must be provided if the type='geo'                                                                                                                                                         |
+| **lat**          |                       |         | latitude value, must be provided if the type='geo'                                                                                                                                                          |
+| **forecast**     | 'today', '5days'      | today   | Determine what forecast to show, today or today plus 4 days ahead                                                                                                                                           |
+| **apikey**       |                       |         | Your API key for open weather map API                                                                                                                                                                       |
+| **unit**         | 'imperial', 'meteric' | meteric | The unit system you want to use, for Meteric the temperature will be shown in Celsius and distances will be in kilometers, for Imperial the temperature will be shown in Fahrenheit and distances in miles. |
+| **lang**         | lang codes            | en      | Returns 'condition:text' field in API in the desired language, Please pass 'lang code' from below table. e.g.: lang=es                                                                                      |
+| **forecastData** |                       |         | The forecast data from an external provider                                                                                                                                                                 |
 
 ## Translate Wind and Humidity
 
